@@ -12,7 +12,7 @@ def installed_packages():
 
 def package_dependencies(package: str):
     """
-    List all dependencies of a given package
+    List all dependencies of a package
     """
 
     dist = pkg_resources.get_distribution(package)
@@ -21,7 +21,15 @@ def package_dependencies(package: str):
 
 def package_homepage(package: str):
     """
-    Get the homepage of a given package
+    Get the homepage of a package
     """
 
     return metadata.distribution(package).metadata.get("Home-page")
+
+
+def package_description(package: str):
+    """
+    Get the description of a package
+    """
+
+    return metadata.metadata(package).get("Description")

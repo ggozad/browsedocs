@@ -2,11 +2,13 @@ from importlib.metadata import PackageNotFoundError
 from pkg_resources import DistributionNotFound
 import typer
 import webbrowser
+from browsedocs.html import get_html, write_html
 
 
 from browsedocs.packages import (
     installed_packages,
     package_dependencies,
+    package_description,
     package_homepage,
 )
 
@@ -45,6 +47,15 @@ def list_packages(deps_of: str = typer.Option(None, "--deps-of")):
             raise typer.Exit(1)
     for package in packages:
         typer.echo(package)
+
+
+@app.command()
+def readme(package: str):
+    description = package_description(package)
+    html = get_html(description)
+    index = write_html(html).as_uri()
+    typer.echo(f"Opening {index}...")
+    webbrowser.open_new_tab(index)
 
 
 if __name__ == "__main__":

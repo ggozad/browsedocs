@@ -12,6 +12,7 @@ browsedocs = "browsedocs.app:app"
 [tool.poetry.dependencies]
 python = "^3.10"
 typer = "^0.7.0"
+markdown = "^3.4.1"
 
 
 [tool.poetry.group.dev.dependencies]

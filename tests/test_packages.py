@@ -1,6 +1,7 @@
 from browsedocs.packages import (
     installed_packages,
     package_dependencies,
+    package_description,
     package_homepage,
 )
 
@@ -27,3 +28,11 @@ def test_package_homepage():
     Test package homepage
     """
     assert package_homepage("browsedocs") == "https://github.com/ggozad/browsedocs"
+
+
+def test_package_description():
+    """
+    Test package description
+    """
+    print(package_description("browsedocs"))
+    assert "# browsedocs" in package_description("browsedocs")
