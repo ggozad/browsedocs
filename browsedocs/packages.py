@@ -1,5 +1,6 @@
-import pkg_resources
 from importlib import metadata
+
+import pkg_resources
 
 
 def installed_packages():
@@ -29,7 +30,10 @@ def package_homepage(package: str):
 
 def package_description(package: str):
     """
-    Get the description of a package
+    Get the description of a package along with its content type
     """
 
-    return metadata.metadata(package).get("Description")
+    return (
+        metadata.metadata(package).get("Description"),
+        metadata.metadata(package).get("Description-Content-Type"),
+    )
