@@ -10,6 +10,7 @@ __pycache__/
 __pypackages__/
 __WORKDIR__/
 .cache/
+.ruff_cache/
 .direnv/
 .idea/
 .pytest_cache/

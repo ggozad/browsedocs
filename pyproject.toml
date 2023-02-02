@@ -1,18 +1,24 @@
 [tool.poetry]
 name = "browsedocs"
 version = "0.1.0"
-description = ""
+description = "A simple command line utility to list and browse documentation of python packages."
 authors = ["Yiorgis Gozadinos <ggozadinos@gmail.com>"]
+homepage = "https://github.com/ggozad/browsedocs"
 readme = "README.md"
+
+[tool.poetry.scripts]
+browsedocs = "browsedocs.app:app"
 
 [tool.poetry.dependencies]
 python = "^3.10"
+typer = "^0.7.0"
 
 
 [tool.poetry.group.dev.dependencies]
 ruff = "^0.0.240"
 black = "^23.1.0"
 pdbpp = "^0.10.3"
+pytest = "^7.2.1"
 
 [build-system]
 requires = ["poetry-core"]
