@@ -16,5 +16,10 @@ browsedocs list
 
 # Open the home-page of a python package
 browsedocs help <package>
+
+# Render and open the description (typically the README) of a python package
+browsedocs readme <package>
+
 ```
+
 

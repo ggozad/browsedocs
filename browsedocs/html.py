@@ -2,12 +2,12 @@ import tempfile
 from pathlib import Path
 
 import docutils.core
-import markdown
+import pycmarkgfm
 
 
 def get_html(text: str, content_type: str = "text/plain"):
     if content_type == "text/markdown":
-        return markdown.markdown(text)
+        return pycmarkgfm.gfm_to_html(text)
     elif content_type == "text/x-rst":
         return docutils.core.publish_string(text, writer_name="html").decode("utf-8")
     return text
